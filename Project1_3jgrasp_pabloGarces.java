@@ -6,7 +6,7 @@ public class Project1_3jgrasp_pabloGarces
    {
       //Delclare all the variables
       double gpuSpeed,
-             cpuSpeed = 0,
+             cpuSpeed,
              perfScore = 0,
              multiplier = 0,
              highestScore = 0,
