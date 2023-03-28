@@ -5,7 +5,7 @@ public class Project1_3jgrasp_pabloGarces
    public static void main(String[] args)   
    {
       //Delclare all the variables
-      double gpuSpeed = 0,
+      double gpuSpeed,
              cpuSpeed = 0,
              perfScore = 0,
              multiplier = 0,
