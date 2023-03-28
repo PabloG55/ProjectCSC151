@@ -4,6 +4,7 @@ public class Project1jgrasp_pabloGarces
 {
    public static void main(String[] args)   
    {
+      //variables
       double gpuSpeed;
       double cpuSpeed;
       int cores;
