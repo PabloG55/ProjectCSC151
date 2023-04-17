@@ -9,7 +9,7 @@ public class Project1_4jgrasp_pabloGarces
         int cores = 0, resOpt = 0, numComputers = 0;
         String recommendedGraphicQuality = "", res = "";
 
-        //Scanner object       
+        //Scanner object           
         Scanner input  = new Scanner(System.in);
 
         //Ask for how many computers
@@ -24,7 +24,7 @@ public class Project1_4jgrasp_pabloGarces
         //Print the title once
     	displayTitle();
         
-        //Start the loop 
+        //Start the loop  
         for(int i = 1; i <= numComputers; i++)
         {
             System.out.println("\nComputer " + i + " information:");
@@ -65,16 +65,22 @@ public class Project1_4jgrasp_pabloGarces
                 resOpt = input.nextInt();
             }
             
+            //Get for the resolution
             res = getResolutionString(resOpt);
 
+            //Get the multiplier
             multiplier = getMultiplierValue(resOpt);
 
+            //Calculate the performance score
             perfScore = calculatePerformanceScore(gpuSpeed, cpuSpeed, multiplier, cores);
 
+            //Determine the recommended graphic quality
             recommendedGraphicQuality = getRecommendedQuality(perfScore);
             
+            //Print all the information
             displayInformation(gpuSpeed, cpuSpeed, multiplier, perfScore, cores, i, res, recommendedGraphicQuality);
             
+            //Determine the highest and lowest scores
             if(i==1)
             {
                 highestScore = perfScore;
@@ -94,13 +100,25 @@ public class Project1_4jgrasp_pabloGarces
         //Print the highest and lowest scores once
         System.out.printf("\nHighest Performance Score: %,.3f\n", highestScore);
         System.out.printf("Lowest Performance Score: %,.3f\n", lowestScore);
-    }
+    }//End Main
+
+    /**
+      Print the title 
+      
+      @param title The title
+   */
     public static void displayTitle()
     {
         String title = "\nComputer Hardware Graphics Quality Recommendation Tool";
         System.out.println(title);
     }
 
+    /**
+      Get for the resolution
+      
+      @param resOpt The resolution options
+      @return The resolution
+   */
     public static String getResolutionString(int resOpt)
     {    
         String res = "";
@@ -124,6 +142,13 @@ public class Project1_4jgrasp_pabloGarces
         }
          return res;   
     }
+
+    /**
+      Get the multiplier
+      
+      @param resOpt The resolution options
+      @return The multiplier
+   */
     public static double getMultiplierValue(int resOpt)
     {    
         double multiplier = 0;
@@ -148,7 +173,15 @@ public class Project1_4jgrasp_pabloGarces
         return multiplier;
     }
 
-    /*Calculate the performance score*/
+    /**
+      Calculate the performance score
+      
+      @param gpuSpeed The GPU Speed
+      @param cpuSpeed The CPU Speed
+      @param multiplier The multiplier
+      @param cores The number of cores
+      @return The Performance Score
+   */
     public static double calculatePerformanceScore(double gpuSpeed, double cpuSpeed, double multiplier, int cores)
     {
         double perfScore;
@@ -156,6 +189,12 @@ public class Project1_4jgrasp_pabloGarces
         return perfScore; 
     }
 
+    /**
+      Determine the recommended graphic quality
+      
+      @param perfScore The Performance Score
+      @return The recommended graphic quality
+   */
     public static String getRecommendedQuality(double perfScore)
     {
         String recommendedGraphicQuality = "";
@@ -182,9 +221,21 @@ public class Project1_4jgrasp_pabloGarces
          return recommendedGraphicQuality;    
     }
 
+    /**
+      Print all the information
+      
+      @param gpuSpeed The GPU Speed
+      @param cpuSpeed The CPU Speed
+      @param multiplier The multiplier
+      @param cores The number of cores
+      @param perfScore The Performance Score
+      @param recommendedGraphicQuality The recommended graphic quality
+      @param i The computer number
+      @param res The resolution
+   */
     public static void displayInformation(double gpuSpeed, double cpuSpeed, double multiplier, double perfScore, int cores, int i, String res, String recommendedGraphicQuality)
     {
-        System.out.println("\nComputer " + i + " information:");
+         System.out.println("\nComputer " + i + " information:");
          System.out.println("GPU Clock Speed: " + gpuSpeed + " MHz");
          System.out.println("CPU Clock Speed: " + cpuSpeed + " MHz");
          System.out.println("Number of cores: " + cores);
@@ -192,6 +243,6 @@ public class Project1_4jgrasp_pabloGarces
          System.out.printf("Performance Score: %,.3f\n", perfScore);
          System.out.println("Recommended Graphics Quality: " + recommendedGraphicQuality);    
     }
-}
+}//End class
 
      
