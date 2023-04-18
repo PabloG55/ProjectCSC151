@@ -102,10 +102,10 @@ public class Project1_4jgrasp_pabloGarces
         System.out.printf("Lowest Performance Score: %,.3f\n", lowestScore);
     }//End Main
 
-    /**
+    /*
       Print the title 
-      
-      @param title The title
+      @param none
+      @return none
    */
     public static void displayTitle()
     {
