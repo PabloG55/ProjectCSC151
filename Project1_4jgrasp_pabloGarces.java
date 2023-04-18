@@ -4,7 +4,7 @@ public class Project1_4jgrasp_pabloGarces
 {
     public static void main(String[] args)   
     {
-        //Delclare all the variables
+        //Delclare all the variables.
         double gpuSpeed, cpuSpeed, perfScore = 0, highestScore = 0, lowestScore = 0, multiplier = 0;
         int cores = 0, resOpt = 0, numComputers = 0;
         String recommendedGraphicQuality = "", res = "";
