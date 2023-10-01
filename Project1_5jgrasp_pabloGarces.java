@@ -67,7 +67,7 @@ public class Project1_5jgrasp_pabloGarces
             
             HardwareGarces hardware = new HardwareGarces(gpuSpeed, cpuSpeed, cores, resOpt);
 
-            displayInformation(hardware);
+            hardware.displayInformation();
 
             //Determine the highest and lowest scores
             if(i==1)
@@ -77,11 +77,11 @@ public class Project1_5jgrasp_pabloGarces
             }
             else
             {
-                if(perfScore >= highestScore)
-                    highestScore = perfScore;
+                if(hardware.calculatePerformanceScore() >= highestScore)
+                    highestScore = hardware.calculatePerformanceScore();
                     
-                if(perfScore <= lowestScore)
-                    lowestScore = perfScore;
+                if(hardware.calculatePerformanceScore() <= lowestScore)
+                    lowestScore = hardware.calculatePerformanceScore();
             }
 
         }
