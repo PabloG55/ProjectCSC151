@@ -70,19 +70,16 @@ public class Project1_5jgrasp_pabloGarces
             hardware.displayInformation();
 
             //Determine the highest and lowest scores
-            if(i==1)
-            {
-                highestScore = perfScore;
-                lowestScore = perfScore;
+            if (i == 1) {
+                highestScore = hardware.calculatePerformanceScore();
+            } 
+            else if (highestScore > hardware.calculatePerformanceScore()) {
+                lowestScore = hardware.calculatePerformanceScore();
             }
-            else
-            {
-                if(hardware.calculatePerformanceScore() >= highestScore)
-                    highestScore = hardware.calculatePerformanceScore();
-                    
-                if(hardware.calculatePerformanceScore() <= lowestScore)
-                    lowestScore = hardware.calculatePerformanceScore();
-            }
+            else if (highestScore < hardware.calculatePerformanceScore()) {
+                lowestScore = highestScore;
+                highestScore = hardware.calculatePerformanceScore();
+            } 
 
         }
 
